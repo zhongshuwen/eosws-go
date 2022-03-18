@@ -1,4 +1,4 @@
-module github.com/dfuse-io/eosws-go
+module github.com/zhongshuwen/eosws-go
 
 require (
 	github.com/gorilla/websocket v1.4.0
