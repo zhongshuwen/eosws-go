@@ -3,17 +3,17 @@ package mdl
 import (
 	"encoding/json"
 
-	eos "github.com/eoscanada/eos-go"
-	"github.com/eoscanada/eos-go/ecc"
+	eos "github.com/zhongshuwen/zswchain-go"
+	"github.com/zhongshuwen/zswchain-go/ecc"
 )
 
 // TransactionTrace maps to a `transaction_trace` in `chain/trace.hpp`
 type TransactionTrace struct {
 	ID              string                       `json:"id,omitempty"`
 	BlockNum        uint32                       `json:"block_num"`
-	BlockTime       eos.BlockTimestamp           `json:"block_time"`
+	BlockTime       zsw.BlockTimestamp           `json:"block_time"`
 	ProducerBlockID string                       `json:"producer_block_id"`
-	Receipt         eos.TransactionReceiptHeader `json:"receipt"`
+	Receipt         zsw.TransactionReceiptHeader `json:"receipt"`
 	Elapsed         int64                        `json:"elapsed"`
 	NetUsage        uint64                       `json:"net_usage"`
 	Scheduled       bool                         `json:"scheduled"`
@@ -26,23 +26,23 @@ type TransactionTrace struct {
 type ActionReceipt struct {
 	Receiver       string            `json:"receiver"`
 	Digest         string            `json:"act_digest"`
-	GlobalSequence eos.Uint64        `json:"global_sequence"`
-	RecvSequence   eos.Uint64        `json:"recv_sequence"`
+	GlobalSequence zsw.Uint64        `json:"global_sequence"`
+	RecvSequence   zsw.Uint64        `json:"recv_sequence"`
 	AuthSequence   []json.RawMessage `json:"auth_sequence"`
-	CodeSequence   eos.Uint64        `json:"code_sequence"`
-	ABISequence    eos.Uint64        `json:"abi_sequence"`
+	CodeSequence   zsw.Uint64        `json:"code_sequence"`
+	ABISequence    zsw.Uint64        `json:"abi_sequence"`
 }
 
 // BaseActionTrace corresponds to a `base_action_trace` from `chain/trace.hpp`
 type BaseActionTrace struct {
 	Receipt          ActionReceipt      `json:"receipt"`
-	Action           eos.Action         `json:"act"`
+	Action           zsw.Action         `json:"act"`
 	ContextFree      bool               `json:"context_free"`
 	Elapsed          int64              `json:"elapsed"`
 	Console          string             `json:"console"`
 	TransactionID    string             `json:"trx_id"`
 	BlockNum         uint32             `json:"block_num"`
-	BlockTime        eos.BlockTimestamp `json:"block_time"`
+	BlockTime        zsw.BlockTimestamp `json:"block_time"`
 	ProducerBlockID  *string            `json:"producer_block_id,omitempty"`
 	AccountRAMDeltas []*AccountRAMDelta `json:"account_ram_deltas"`
 	Except           json.RawMessage    `json:"except"`
@@ -50,7 +50,7 @@ type BaseActionTrace struct {
 
 // AccountRAMDelta corresponds to an `account_delta` from `chain/trace.hpp`
 type AccountRAMDelta struct {
-	Account eos.AccountName `json:"account"`
+	Account zsw.AccountName `json:"account"`
 	Delta   int64           `json:"delta"`
 }
 
@@ -60,7 +60,7 @@ type ActionTrace struct {
 	CreatorActionOrdinal                   uint32 `json:"creator_action_ordinal"`
 	ClosestUnnotifiedAncestorActionOrdinal uint32 `json:"closest_unnotified_ancestor_action_ordinal"`
 	BaseActionTrace
-	Receiver     eos.AccountName `json:"receiver,omitempty"`
+	Receiver     zsw.AccountName `json:"receiver,omitempty"`
 	InlineTraces []*ActionTrace  `json:"inline_traces"`
 }
 
@@ -72,9 +72,9 @@ type PermissionLevel struct {
 type TransactionLifecycle struct {
 	TransactionStatus           string                 `json:"transaction_status"`
 	ID                          string                 `json:"id"`
-	Transaction                 *eos.SignedTransaction `json:"transaction"`
+	Transaction                 *zsw.SignedTransaction `json:"transaction"`
 	ExecutionTrace              *TransactionTrace      `json:"execution_trace"`
-	ExecutionBlockHeader        *eos.BlockHeader       `json:"execution_block_header"`
+	ExecutionBlockHeader        *zsw.BlockHeader       `json:"execution_block_header"`
 	DTrxOps                     []*DTrxOp              `json:"dtrxops"`
 	CreationTree                CreationFlatTree       `json:"creation_tree"`
 	DBOps                       []*DBOp                `json:"dbops"`

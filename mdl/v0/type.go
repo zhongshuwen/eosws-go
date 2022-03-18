@@ -1,6 +1,6 @@
 package v0
 
-import "github.com/eoscanada/eos-go"
+import "github.com/zhongshuwen/zswchain-go"
 
 type DBOp struct {
 	Operation   string `json:"op"`
@@ -21,8 +21,8 @@ type RAMOp struct {
 	Action      string `json:"action"`
 	Operation string     `json:"op"`
 	Payer     string     `json:"payer"`
-	Delta     eos.Int64  `json:"delta"`
-	Usage     eos.Uint64 `json:"usage"` // new usage
+	Delta     zsw.Int64  `json:"delta"`
+	Usage     zsw.Uint64 `json:"usage"` // new usage
 }
 
 type DTrxOp struct {
@@ -35,7 +35,7 @@ type DTrxOp struct {
 	DelayUntil    string           `json:"delay_until"`
 	ExpirationAt  string           `json:"expiration_at"`
 	TransactionID string           `json:"trx_id"`
-	Transaction   *eos.Transaction `json:"trx,omitempty"`
+	Transaction   *zsw.Transaction `json:"trx,omitempty"`
 }
 
 type TableOp struct {

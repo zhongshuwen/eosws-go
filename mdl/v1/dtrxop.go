@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"strings"
 
-	eos "github.com/eoscanada/eos-go"
+	eos "github.com/zhongshuwen/zswchain-go"
 )
 
 type DTrxOp struct {
@@ -25,7 +25,7 @@ type ExtDTrxOp struct {
 	SourceTransactionID string             `json:"src_trx_id"`
 	BlockNum            uint32             `json:"block_num"`
 	BlockID             string             `json:"block_id"`
-	BlockTime           eos.BlockTimestamp `json:"block_time"`
+	BlockTime           zsw.BlockTimestamp `json:"block_time"`
 
 	DTrxOp
 }
@@ -46,7 +46,7 @@ func (d *DTrxOp) IsCancelOperation() bool {
 	return false
 }
 
-func (d *DTrxOp) SignedTransaction() (transaction *eos.SignedTransaction, err error) {
+func (d *DTrxOp) SignedTransaction() (transaction *zsw.SignedTransaction, err error) {
 	err = json.Unmarshal(d.Trx, &transaction)
 	if err != nil {
 		return nil, fmt.Errorf("unmarshall signedTransaction: %s", err)
