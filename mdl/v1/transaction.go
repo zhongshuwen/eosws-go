@@ -3,7 +3,7 @@ package mdl
 import (
 	"encoding/json"
 
-	eos "github.com/zhongshuwen/zswchain-go"
+	zsw "github.com/zhongshuwen/zswchain-go"
 	"github.com/zhongshuwen/zswchain-go/ecc"
 )
 

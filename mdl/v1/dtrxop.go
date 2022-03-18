@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"strings"
 
-	eos "github.com/zhongshuwen/zswchain-go"
+	zsw "github.com/zhongshuwen/zswchain-go"
 )
 
 type DTrxOp struct {
