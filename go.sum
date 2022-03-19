@@ -92,6 +92,8 @@ github.com/zhongshuwen/gmsm v1.7.0 h1:ZXBBeBOKwGQ7wKDmhd0OS5b/g38R3C63orZrOdlLxh
 github.com/zhongshuwen/gmsm v1.7.0/go.mod h1:LVRhbvvuwdY1fpO5kocIeWRIGj4NMi2KGC9TobszP+Q=
 github.com/zhongshuwen/zswchain-go v1.9.3 h1:VhXyY2IaMrLlXf+pCX24BDUzWVGsDqVFudAHxDtizDw=
 github.com/zhongshuwen/zswchain-go v1.9.3/go.mod h1:ZxJ+7ZkjXzvsI5vlntBLtzoIg+3vXVe8onfEQ7wSgM8=
+github.com/zhongshuwen/zswchain-go v1.9.4 h1:Fz7cqoYQdFJiqbZaF0kXKy4wCXTwc4VoS48JnYG79wM=
+github.com/zhongshuwen/zswchain-go v1.9.4/go.mod h1:ZxJ+7ZkjXzvsI5vlntBLtzoIg+3vXVe8onfEQ7wSgM8=
 go.opencensus.io v0.21.0/go.mod h1:mSImk1erAIZhrmZN+AvHh14ztQfjbGwt4TtuofqLduU=
 go.opencensus.io v0.22.0/go.mod h1:+kGneAE2xo2IficOXnaByMWTGM9T73dGwxeWcUqIpI8=
 go.opencensus.io v0.22.1 h1:8dP3SGL7MPB94crU3bEPplMPe83FI4EouesJUeFHv50=
